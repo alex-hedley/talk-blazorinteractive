@@ -10,7 +10,7 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<link rel="canonical" href="https://alex-hedley.github.io/talk-git" />
+		<link rel="canonical" href="https://alex-hedley.github.io/talk-blazorinteractive" />
 		<link rel="icon" href="favicon.ico" />
 		
 		<link rel="stylesheet" href="dist/reset.css">
@@ -26,28 +26,221 @@
 			<div class="slides">
 				
 				<!-- Slide -->
-				<section>
-					<a href="https://alex-hedley.github.io">
+				<section data-background-gradient="radial-gradient(#5C2D91, #ccc)"">
+					<a href="https://alex-hedley.github.io" target="_blank">
 						<img src="images/AlexHedley.jpg" alt="Alex Hedley" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;">
 					</a>
-					<a href="https://github.com/alex-hedley/BlazorInteractive">
+					<a href="https://github.com/alex-hedley/BlazorInteractive" target="_blank">
 						<img src="images/Blazor_Logo.png" alt="Blazor (Logo)" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;">
 					</a>
-					<h3>BlazorInteractive</h3>
+					<h3>Blazor Interactive</h3>
 					
 					<p>
-						<small>Created by <a href="https://alexhedley.com/">Alex Hedley</a></small>
+						<small>Created by <a href="https://alexhedley.com/" target="_blank">Alex Hedley</a></small>
 					</p>
 
 					<div style="display: flex; align-items: center; justify-content: center; gap: 2rem;">
-						<a href="https://github.com/alex-hedley/">
+						<small>Find me: </small>
+						<a href="https://github.com/alex-hedley/" target="_blank">
 							<img src="images/GitHub.png" alt="GitHub Invertocat" height="30" />
 						</a>
-						<a href="https://www.linkedin.com/in/alexhedley/">
+						<a href="https://www.linkedin.com/in/alexhedley/" target="_blank">
 							<img src="images/LinkedIn.png" alt="LinkedIn" height="30" />
 						</a>
 					</div>
+				</section>
 
+				<!-- Slide -->
+				<section>
+					<h3>Journey</h3>
+					<p>
+						<a href="https://try.dot.net" target="_blank">
+							<img src="images/try.net.png" alt="Try .NET" style="height: 300px; margin: 0 auto 2rem auto; background: transparent;"/>
+						</a>
+					</p>
+
+					<p><a href="https://try.dot.net" target="_blank">Try .NET</a></p>
+					<p>Runnable .NET code on your site</p>
+					<p><small>[<a href="https://dotnet.microsoft.com/en-us/platform/try-dotnet" target="_blank">Documentation</a>] [<a href="https://github.com/dotnet/try" target="_blank">Code</a>]</small></p>
+				</section>
+
+				<!-- Slide -->
+				<section>
+					<h3>.NET Interactive</h3>
+					<p>Install the .NET global tool <a href="https://www.nuget.org/packages/Microsoft.dotnet-interactive" target="_blank">nuget package</a>. [<a href="https://github.com/dotnet/interactive" target="_blank">code</a>]</p>
+					<blockquote>Command line tool for interactive programming with C#, F#, and PowerShell, including support for Jupyter Notebooks.</blockquote>
+					<p><small><code>dotnet tool install --global Microsoft.dotnet-interactive --version 1.0.431302</code></small></p>
+					<p>Client / Server</p>
+
+					<aside class="notes">
+						Need the `dotnet-interactive` tool running as a separate process.
+
+						`dotnet interactive stdio --http-port 9000`
+
+						Then connect to it via js.
+					</aside>
+				</section>
+
+				<!-- Slide -->
+				<section>
+					<h3>What is Blazor Interactive?</h3>
+					<p>A website to write, compile and run code, in the browser.</p>
+					<img src="images/BlazorInteractive_Demo_1.png" alt="BlazorInteractive - Demo (1)" style="height: 300px; margin: 0 auto 2rem auto; background: transparent;"/>
+					<p>Think <a href="https://dotnetfiddle.net" target="_blank">.NET Fiddle</a>.</p>
+
+					<aside class="notes">
+						Blazor C# Interactive (Try .NET)
+						VB.NET / F# coming soon.
+						(NuGet too)
+					</aside>
+				</section>
+
+				<!-- Slide -->
+				<section>
+					<h2>Compilation</h2>
+					<p><code>CSharpCompilation.CreateScriptCompilation</code></p>
+				</section>
+				
+				<!-- Slide -->
+				<!-- <section>
+					<h2>Code Compiler</h2>
+					<p>...</p>
+				</section> -->
+
+				<!-- Slide -->
+				<!-- <section>
+					<h2>File Reference Resolver</h2>
+					<p>...</p>
+				</section> -->
+
+				<!-- Slide -->
+				<!-- <section>
+					<h2>Assembly Loader</h2>
+					<p>...</p>
+				</section> -->
+				
+				<!-- Slide -->
+				<!-- <section>
+					<h2>Assembly Invoker</h2>
+					<p>...</p>
+				</section> -->
+
+				<!-- Slide -->
+				<!-- <section>
+					<h2>Assembly Accessor</h2>
+					<p>...</p>
+				</section> -->
+				
+				<!-- Slide -->
+				<!-- <section>
+					<h2>Reference Filter</h2>
+					<p>...</p>
+				</section> -->
+				
+				<section>
+					<!-- Slide -->
+					<section>
+						<h3>Inspiration</h3>
+
+						<h4>Try .NET</h4>
+						<ul>
+							<li>
+								<a href="https://try.dot.net" target="_blank">Try .NET</a>
+							</li>
+							<li>
+								<a href="https://dotnet.microsoft.com/en-us/platform/try-dotnet" target="_blank">Try .NET  - Documentation</a>
+							</li>
+							<li>
+								<a href="https://github.com/dotnet/try" target="_blank">Try .NET - code</a>
+							</li>
+						</ul>
+					</section>
+
+					<!-- Slide -->
+					<section>
+						<h3>Inspiration</h3>
+						
+						<h4>.NET Interactive</h4>
+						<ul>
+							<li>
+								📝 <a href="https://devblogs.microsoft.com/dotnet/net-interactive-is-here-net-notebooks-preview-2/" target="_blank">.NET Interactive is here! | .NET Notebooks Preview 2</a>
+							</li>
+							<li>
+								<a href="https://github.com/dotnet/interactive" target="_blank">.NET Interactive (code)</a>
+								<ul>
+									<li>
+										<a href="https://github.com/dotnet/interactive/issues/800" target="_blank">[QUESTION]: Can .NET interactive be embedded in a Web Application? #800 (ISSUE)</a>
+									</li>
+									<li>
+										<a href="https://github.com/dotnet/interactive/discussions/2612" target="_blank">[QUESTION]: Can .NET interactive be embedded in a Web Application? #2612 (DISCUSSION)</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+					<!-- Slide -->
+					<section>
+						<h3>Inspiration</h3>
+						
+						<h4>WASI SDK</h4>
+						<ul>
+							<li>
+								<a href="https://github.com/SteveSandersonMS/dotnet-wasi-sdk" target="_blank">Experimental WASI SDK for .NET Core</a>
+							</li>
+						</ul>
+					</section>
+
+					<!-- Slide -->
+					<section>
+						<h3>Inspiration</h3>
+
+						<h4>Blazor</h4>
+						<ul>
+							<li>
+								<a href="https://www.strathweb.com/2019/06/building-a-c-interactive-shell-in-a-browser-with-blazor-webassembly-and-roslyn/">Building a C# Interactive shell in a browser with Blazor (WebAssembly) and Roslyn</a> by <a href="https://github.com/filipw">Filip W</a> 🗓️ June 7th 2019
+							</li>
+							<li>
+								<a href="https://github.com/filipw/Strathweb.Samples.BlazorCSharpInteractive" target="_blank">Strathweb.Samples.BlazorCSharpInteractive</a> @filipw
+								<ul>
+									<li>
+										<a href="https://github.com/alex-hedley/Strathweb.Samples.BlazorCSharpInteractive" target="_blank">FORK</a>
+									</li>
+									<li>
+										<a href="https://alex-hedley.github.io/Strathweb.Samples.BlazorCSharpInteractive/" target="_blank">DEMO</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- Slide -->
+				<section>
+					<h3>Hacking</h3>
+					<ul>
+						<li>
+							<a href="https://github.com/alex-hedley/dotnet-interactive-experiments" target="_blank">.NET Interactive Experiments</a>
+							<ul>
+								<li><a href="https://github.com/colombod/dotnet-interactive-experiments" target="_blank">.NET Interactive Experiments (Original) @colombod</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="https://github.com/alex-hedley/dotnet-interactive-blazor-wasm" target="_blank">.NET Interactive Blazor (WASM)</a>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Contributors -->
+				<section>
+					<h3>Contributors</h3>
+					<p>This has been a team effort, thanks to <img src="https://avatars.githubusercontent.com/u/3020488?s=50&v=4" /> <a href="https://github.com/TheDanielDoyle" target="_blank">TheDanielDoyle</a> and <img src="https://avatars3.githubusercontent.com/u/46314954?s=50&v=4" /> <a href="https://github.com/jamsidedown/" target="_blank">jamsidedown</a> for their continued support and mobbing on this application.</p>
+					<p>It's been great to work alongside people to create something, instead of being a lone wolf.</p>
+				</section>
+
+				<!-- Slide -->
+				<section>
+					<h2>Thanks</h2>
 				</section>
 
 				<!-- Slide -->
@@ -65,6 +258,7 @@
 		<script src="plugin/highlight/highlight.js"></script>
 		<script>
 			Reveal.initialize({
+				slideNumber: 'c/t',
 				controls: true,
 				progress: true,
 				center: true,
