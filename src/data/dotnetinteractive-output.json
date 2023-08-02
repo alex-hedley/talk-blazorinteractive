@@ -1,0 +1,237 @@
+{
+    "event": {
+      "kernelInfos": [
+        {
+          "aliases": [],
+          "languageName": null,
+          "languageVersion": null,
+          "isProxy": false,
+          "isComposite": true,
+          "displayName": ".NET",
+          "localName": ".NET",
+          "uri": "kernel://pid-24481",
+          "remoteUri": null,
+          "supportedKernelCommands": [
+            { "name": "RequestKernelInfo" },
+            { "name": "Quit" }
+          ],
+          "supportedDirectives": [
+            { "name": "#!sql" },
+            { "name": "#!kql" },
+            { "name": "#!csharp" },
+            { "name": "#!fsharp" },
+            { "name": "#!pwsh" },
+            { "name": "#!html" },
+            { "name": "#!value" },
+            { "name": "#!mermaid" },
+            { "name": "#!lsmagic" },
+            { "name": "#!markdown" },
+            { "name": "#!time" },
+            { "name": "#!log" },
+            { "name": "#!about" },
+            { "name": "#!import" },
+            { "name": "#!connect" },
+            { "name": "#!javascript" },
+            { "name": "#!enable-http" }
+          ]
+        },
+        {
+          "aliases": [],
+          "languageName": "SQL",
+          "languageVersion": null,
+          "isProxy": false,
+          "isComposite": false,
+          "displayName": "sql - SQL",
+          "localName": "sql",
+          "uri": "kernel://pid-24481/sql",
+          "remoteUri": null,
+          "supportedKernelCommands": [
+            { "name": "RequestKernelInfo" },
+            { "name": "SubmitCode" }
+          ],
+          "supportedDirectives": [{ "name": "#!lsmagic" }]
+        },
+        {
+          "aliases": [],
+          "languageName": "KQL",
+          "languageVersion": null,
+          "isProxy": false,
+          "isComposite": false,
+          "displayName": "kql - KQL",
+          "localName": "kql",
+          "uri": "kernel://pid-24481/kql",
+          "remoteUri": null,
+          "supportedKernelCommands": [
+            { "name": "RequestKernelInfo" },
+            { "name": "SubmitCode" }
+          ],
+          "supportedDirectives": [{ "name": "#!lsmagic" }]
+        },
+        {
+          "aliases": ["c#", "C#"],
+          "languageName": "C#",
+          "languageVersion": "11.0",
+          "isProxy": false,
+          "isComposite": false,
+          "displayName": "csharp - C# Script",
+          "localName": "csharp",
+          "uri": "kernel://pid-24481/csharp",
+          "remoteUri": null,
+          "supportedKernelCommands": [
+            { "name": "RequestKernelInfo" },
+            { "name": "RequestCompletions" },
+            { "name": "RequestDiagnostics" },
+            { "name": "RequestHoverText" },
+            { "name": "RequestSignatureHelp" },
+            { "name": "RequestValue" },
+            { "name": "RequestValueInfos" },
+            { "name": "SendValue" },
+            { "name": "SubmitCode" },
+            { "name": "ChangeWorkingDirectory" }
+          ],
+          "supportedDirectives": [
+            { "name": "#i" },
+            { "name": "#r" },
+            { "name": "#!nuget-restore" },
+            { "name": "#!who" },
+            { "name": "#!whos" },
+            { "name": "#!share" },
+            { "name": "#!set" },
+            { "name": "#!lsmagic" }
+          ]
+        },
+        {
+          "aliases": ["f#", "F#"],
+          "languageName": "F#",
+          "languageVersion": "7.0",
+          "isProxy": false,
+          "isComposite": false,
+          "displayName": "fsharp - F# Script",
+          "localName": "fsharp",
+          "uri": "kernel://pid-24481/fsharp",
+          "remoteUri": null,
+          "supportedKernelCommands": [
+            { "name": "RequestKernelInfo" },
+            { "name": "ChangeWorkingDirectory" },
+            { "name": "SubmitCode" },
+            { "name": "SendValue" },
+            { "name": "RequestValue" },
+            { "name": "RequestValueInfos" },
+            { "name": "RequestHoverText" },
+            { "name": "RequestDiagnostics" },
+            { "name": "RequestCompletions" }
+          ],
+          "supportedDirectives": [
+            { "name": "#i" },
+            { "name": "#r" },
+            { "name": "#!nuget-restore" },
+            { "name": "#!who" },
+            { "name": "#!whos" },
+            { "name": "#!share" },
+            { "name": "#!set" },
+            { "name": "#!lsmagic" }
+          ]
+        },
+        {
+          "aliases": ["powershell"],
+          "languageName": "PowerShell",
+          "languageVersion": null,
+          "isProxy": false,
+          "isComposite": false,
+          "displayName": "pwsh - PowerShell",
+          "localName": "pwsh",
+          "uri": "kernel://pid-24481/pwsh",
+          "remoteUri": null,
+          "supportedKernelCommands": [
+            { "name": "RequestKernelInfo" },
+            { "name": "RequestCompletions" },
+            { "name": "RequestDiagnostics" },
+            { "name": "RequestValueInfos" },
+            { "name": "RequestValue" },
+            { "name": "SendValue" },
+            { "name": "SubmitCode" }
+          ],
+          "supportedDirectives": [
+            { "name": "#!share" },
+            { "name": "#!set" },
+            { "name": "#!lsmagic" }
+          ]
+        },
+        {
+          "aliases": [],
+          "languageName": "HTML",
+          "languageVersion": null,
+          "isProxy": false,
+          "isComposite": false,
+          "displayName": "html - HTML",
+          "localName": "html",
+          "uri": "kernel://pid-24481/html",
+          "remoteUri": null,
+          "supportedKernelCommands": [
+            { "name": "RequestKernelInfo" },
+            { "name": "SubmitCode" }
+          ],
+          "supportedDirectives": [{ "name": "#!lsmagic" }]
+        },
+        {
+          "aliases": [],
+          "languageName": null,
+          "languageVersion": null,
+          "isProxy": false,
+          "isComposite": false,
+          "displayName": "value - Raw Value Storage",
+          "localName": "value",
+          "uri": "kernel://pid-24481/value",
+          "remoteUri": null,
+          "supportedKernelCommands": [
+            { "name": "RequestKernelInfo" },
+            { "name": "RequestValueInfos" },
+            { "name": "RequestValue" },
+            { "name": "SendValue" },
+            { "name": "SubmitCode" }
+          ],
+          "supportedDirectives": [
+            { "name": "#!who" },
+            { "name": "#!whos" },
+            { "name": "#!lsmagic" }
+          ]
+        },
+        {
+          "aliases": [],
+          "languageName": "Mermaid",
+          "languageVersion": null,
+          "isProxy": false,
+          "isComposite": false,
+          "displayName": "mermaid - Mermaid",
+          "localName": "mermaid",
+          "uri": "kernel://pid-24481/mermaid",
+          "remoteUri": null,
+          "supportedKernelCommands": [
+            { "name": "RequestKernelInfo" },
+            { "name": "SubmitCode" }
+          ],
+          "supportedDirectives": [{ "name": "#!lsmagic" }]
+        },
+        {
+          "aliases": ["js"],
+          "languageName": "JavaScript",
+          "languageVersion": null,
+          "isProxy": false,
+          "isComposite": false,
+          "displayName": "javascript - JavaScript",
+          "localName": "javascript",
+          "uri": "kernel://pid-24481/javascript",
+          "remoteUri": null,
+          "supportedKernelCommands": [
+            { "name": "RequestKernelInfo" },
+            { "name": "SubmitCode" },
+            { "name": "SendValue" }
+          ],
+          "supportedDirectives": [{ "name": "#!share" }, { "name": "#!set" }]
+        }
+      ]
+    },
+    "eventType": "KernelReady",
+    "command": null,
+    "routingSlip": []
+  }
