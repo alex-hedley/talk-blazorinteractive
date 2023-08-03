@@ -69,16 +69,7 @@
 					<h3>.NET Interactive</h3>
 					<p>Install the .NET global tool <a href="https://www.nuget.org/packages/Microsoft.dotnet-interactive" target="_blank">nuget package</a>. [<a href="https://github.com/dotnet/interactive" target="_blank">code</a>]</p>
 					<small><blockquote>Command line tool for interactive programming with C#, F#, and PowerShell, including support for Jupyter Notebooks.</blockquote></small>
-					<p><small><code>dotnet tool install --global Microsoft.dotnet-interactive --version 1.0.431302</code></small></p>
 					<p>Client / Server</p>
-					<p><code>dotnet interactive stdio --http-port 9000</code></p>
-
-					<aside class="notes">
-						<p>Need the `dotnet-interactive` tool running as a separate process.</p>
-						<p><code>dotnet interactive stdio --http-port 9000</code></p>
-						<p>Then connect to it via js.</p>
-						<p><strong><code>http</code></strong> - <code>dotnet interactive http --http-port 9000</code> was the original</p>
-					</aside>
 				</section>
 
 				<!-- DEMO -->
@@ -92,11 +83,19 @@
 					<!-- Slide -->
 					<section>
 						<h2>.NET Interactive</h2>
-						
+						<p><small>Install: <code>dotnet tool install --global Microsoft.dotnet-interactive --version 1.0.431302</code></small></p>
+
 						<p>
-							<small><code>dotnet interactive stdio --http-port 9000</code></small>
-							<img src="images/demo/dotnetinteractive-start.png" alt=".NET Interactive (Start)" style="height: 300px; margin: 0 auto 2rem auto; background: transparent;"/>
+							<small>Run: <code>dotnet interactive stdio --http-port 9000</code></small>
+							<img src="images/demo/dotnetinteractive-start.png" alt=".NET Interactive (Start)" style="height: 400px; margin: 0 auto 2rem auto; background: transparent;"/>
 						</p>
+
+						<aside class="notes">
+							<p>Need the `dotnet-interactive` tool running as a separate process.</p>
+							<p><code>dotnet interactive stdio --http-port 9000</code></p>
+							<p>Then connect to it via js.</p>
+							<p><strong><code>http</code></strong> - <code>dotnet interactive http --http-port 9000</code> was the original</p>
+						</aside>
 					</section>
 
 					<!-- Slide -->
@@ -105,19 +104,21 @@
 						
 						<p>
 							<small><code>npm run start</code></small>
-							<img src="images/demo/site-start.png" alt="npm (Start)" style="height: 300px; margin: 0 auto 2rem auto; background: transparent;"/>
+							<img src="images/demo/site-start.png" alt="npm (Start)" style="height: 200px; margin: 0 auto 2rem auto; background: transparent;"/>
 						<br />
 							<small>open <em>http://127.0.0.1:8080</em></small>
-							<img src="images/demo/site-localhost.png" alt="site (localhost)" style="height: 300px; margin: 0 auto 2rem auto; background: transparent;"/>
+							<img src="images/demo/site-localhost.png" alt="site (localhost)" style="height: 200px; margin: 0 auto 2rem auto; background: transparent;"/>
 						</p>
+						<p>Some extra HTML/JS code to connect to .NET Interactive.</p>
 						
 					</section>
 
 					<!-- Slide -->
 					<section>
-						<h2>.NET Interactive</h2>
-						<h3>Demo - Events</h3>
+						<h3>.NET Interactive</h3>
+						<h4>Demo - Events</h4>
 						<p>
+							<small>There are a number of events you can listen for and take action on:</small>
 							<ul>
 								<li>DisplayedValueProduced</li>
 								<li>CodeSubmissionReceived</li>
@@ -149,54 +150,103 @@
 					<p>Think <a href="https://dotnetfiddle.net" target="_blank">.NET Fiddle</a>.</p>
 
 					<aside class="notes">
-						Blazor C# Interactive (Try .NET)
-						VB.NET / F# coming soon.
-						(NuGet too)
+						<p>Blazor C# Interactive (Try .NET)</p>
+						<p>VB.NET / F# coming soon.</p>
+						<p>(NuGet too)</p>
 					</aside>
 				</section>
 
-				<!-- Slide -->
+				<!-- Compilation -->
 				<section>
-					<h2>Compilation</h2>
-					<p><code>CSharpCompilation.CreateScriptCompilation</code></p>
+					<!-- Slide -->
+					<section>
+						<h2>Compilation</h2>
+						<p><code>CSharpCompilation.CreateScriptCompilation</code></p>
+					</section>
+
+					<!-- Slide -->
+					<section>
+						<h2>Journey</h2>
+						<div class="mermaid" style="height: 300px;">
+							<pre>
+								%%{init: {'theme': 'dark', 'themeVariables': { 'darkMode': true }}}%%
+								flowchart LR
+									A[SyntaxTree] --> E;
+									B[CompilationOptions]--> E;
+									C[MetadataReferences] --> E;
+									D[Name] --> E;
+									E[Compiler] --> F;
+									F{Emit} --> G;
+									G[Assembly] --> H;
+									H{Create} --> I;
+									I{Invoke} --> *;
+							</pre>
+						</div>
+					</section>
+
+					<!-- Slide -->
+					<section>
+						<h2>Syntax Tree</h2>
+						<p>Firstly you need to build a <code>SyntaxTree</code> using the code provided.</p>
+
+						<aside class="notes">
+							<p>This is where you could add the <a href="https://microsoft.github.io/monaco-editor/" target="_blank">MonacoEditor</a>  m0-sdfor a rich code writing experience.</p>
+						</aside>
+					</section>
+
+					<!-- Slide -->
+					<section>
+						<h2>Compilation Options</h2>
+						<p>Do you want to output a <code>DLL</code> or a <code>Console App</code>?</p>
+						<p>Also you need to pass a list of <code>usings</code>, prob best to add <code>System</code> as a minimum.</p>
+					</section>
+
+					<!-- Slide -->
+					<section>
+						<h2>Metadata References</h2>
+						<p>Usually able to get these from the <code>AppDomain</code>.</p>
+
+						<p><small>More on this later...</small></p>
+					</section>
+					
+
+					<!-- Slide -->
+					<!-- <section>
+						<h2>Code Compiler</h2>
+						<p>...</p>
+					</section> -->
+
+					<!-- Slide -->
+					<!-- <section>
+						<h2>File Reference Resolver</h2>
+						<p>...</p>
+					</section> -->
+
+					<!-- Slide -->
+					<!-- <section>
+						<h2>Assembly Loader</h2>
+						<p>...</p>
+					</section> -->
+
+					<!-- Slide -->
+					<!-- <section>
+						<h2>Assembly Invoker</h2>
+						<p>...</p>
+					</section> -->
+
+					<!-- Slide -->
+					<!-- <section>
+						<h2>Assembly Accessor</h2>
+						<p>...</p>
+					</section> -->
+
+					<!-- Slide -->
+					<!-- <section>
+						<h2>Reference Filter</h2>
+						<p>...</p>
+					</section> -->
 				</section>
-
-				<!-- Slide -->
-				<!-- <section>
-					<h2>Code Compiler</h2>
-					<p>...</p>
-				</section> -->
-
-				<!-- Slide -->
-				<!-- <section>
-					<h2>File Reference Resolver</h2>
-					<p>...</p>
-				</section> -->
-
-				<!-- Slide -->
-				<!-- <section>
-					<h2>Assembly Loader</h2>
-					<p>...</p>
-				</section> -->
-
-				<!-- Slide -->
-				<!-- <section>
-					<h2>Assembly Invoker</h2>
-					<p>...</p>
-				</section> -->
-
-				<!-- Slide -->
-				<!-- <section>
-					<h2>Assembly Accessor</h2>
-					<p>...</p>
-				</section> -->
-
-				<!-- Slide -->
-				<!-- <section>
-					<h2>Reference Filter</h2>
-					<p>...</p>
-				</section> -->
-
+				
 				<!-- Inspiration -->
 				<section>
 					<!-- Slide -->
