@@ -34,6 +34,8 @@
 						<img src="images/Blazor_Logo.png" alt="Blazor (Logo)" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;">
 					</a>
 					<h3>Blazor Interactive</h3>
+
+					<small><blockquote>Building a clone of Try.NET (.NET Interactive) in Blazor WASM</blockquote></small>
 					
 					<p>
 						<small>Created by <a href="https://alexhedley.com/" target="_blank">Alex Hedley</a></small>
@@ -47,7 +49,14 @@
 						<a href="https://www.linkedin.com/in/alexhedley/" target="_blank">
 							<img src="images/LinkedIn.png" alt="LinkedIn" height="30" />
 						</a>
+						<a href="https://opencastsoftware.com/careers/vacancies/all-vacancies/" target="_blank">
+							<img src="images/Opencast.jpg" alt="Opencast" height="30" />
+						</a>
 					</div>
+
+					<p>
+						<small>Slides: <a href="https://github.com/alex-hedley/talk-blazorinteractive" target="https://github.com/alex-hedley/talk-blazorinteractive">https://github.com/alex-hedley/talk-blazorinteractive</a></small>
+					</p>
 				</section>
 
 				<!-- Slide -->
@@ -208,43 +217,106 @@
 
 						<p><small>More on this later...</small></p>
 					</section>
+
+					<!-- Slide -->
+					<section>
+						<h2>Publish Trimmed</h2>
+
+						<p>This was added to the Blazor application <code>.csproj</code> so dlls weren't bundled together and we could make use of them in the list.</p>
+						<pre><code data-trim data-noescape>
+							&lt;PropertyGroup&gt;
+								&lt;PublishTrimmed&gt;false&lt;/PublishTrimmed&gt;
+							&lt;/PropertyGroup&gt;
+						</code></pre>
+						
+					</section>
+
+					<!-- Slide -->
+					<section>
+						<h2>Network Requests</h2>
+						<img src="images/site/DevTools_Network_1.png" alt="Network" 
+							style="height: 500px; margin: 0 auto 2rem auto; background: transparent;"/>
+					</section>
+
+					<!-- Slide -->
+					<section>
+						<h2>Network Requests</h2>
+						<img src="images/site/DevTools_Network_2.png" alt="Network" 
+							style="height: 500px; margin: 0 auto 2rem auto; background: transparent;"/>
+					</section>
+
+					<!-- Slide -->
+					<section>
+						<h2>blazor.boot.json</h2>
+						<p>This contains a list of the DLLs related to the project.</p>
+						<img src="images/site/blazor.boot.json.png" alt="blazor.boot.json" 
+							style="height: 500px; margin: 0 auto 2rem auto; background: transparent;"/>
 					
+							<aside class="notes">
+								<p>Blazor WASM DLLs: <a href="https://stackoverflow.com/a/73944260" target="_blank">https://stackoverflow.com/a/73944260</a>.</p>
+							</aside>
+							
+						</section>
+
+					<!-- Slide -->
+					<section>
+						<h2>Cache Storage (Application)</h2>
+						<img src="images/site/DevTools_Application_CacheStorage.png" alt="Cache Storage - Application" 
+							style="height: 500px; margin: 0 auto 2rem auto; background: transparent;"/>
+					</section>
+					
+					<!-- Slide -->
+					<section>
+						<h2>Steps</h2>
+						<ul>
+							<li>Reference Filter (from <code>blazor.boot.json</code>)</li>
+							<li>Reference Resolver (Local / Remote)</li>
+							<ul>
+								<li>Assembly Accessor (Local / Blazor)</li>
+							</ul>	
+							<li>Code Compiler</li>
+							<li>Assembly Loader</li>
+							<li>Assembly Invoker</li>
+						</ul>
+
+						<div class="mermaid" style="height: 300px;">
+							<pre>
+								%%{init: {'theme': 'dark', 'themeVariables': { 'darkMode': true }}}%%
+								graph LR;
+
+									subgraph Page
+										A[Reference Filter];
+
+										B[Reference Resolver] --> C
+										C[Compile] --> D
+										D[Assembly Loader]
+
+										subgraph Load
+											E[Emit] --> F
+											F[Load]
+										end
+
+										subgraph Invoke
+											G[Create Instance] --> H
+											H[Invoke Member]
+										end
+
+										I[Console Display]
+									end
+								
+							</pre>
+						</div>
+
+						<aside class="notes">
+							<p>Get a list of Assemblies - from that get the References, pass them to the Compiler.</p>
+							<p>From the compilied DLL load this new Assembly then Invoke to produce the output.</p>
+						</aside>
+					</section>
 
 					<!-- Slide -->
 					<!-- <section>
-						<h2>Code Compiler</h2>
-						<p>...</p>
 					</section> -->
-
-					<!-- Slide -->
-					<!-- <section>
-						<h2>File Reference Resolver</h2>
-						<p>...</p>
-					</section> -->
-
-					<!-- Slide -->
-					<!-- <section>
-						<h2>Assembly Loader</h2>
-						<p>...</p>
-					</section> -->
-
-					<!-- Slide -->
-					<!-- <section>
-						<h2>Assembly Invoker</h2>
-						<p>...</p>
-					</section> -->
-
-					<!-- Slide -->
-					<!-- <section>
-						<h2>Assembly Accessor</h2>
-						<p>...</p>
-					</section> -->
-
-					<!-- Slide -->
-					<!-- <section>
-						<h2>Reference Filter</h2>
-						<p>...</p>
-					</section> -->
+					
 				</section>
 				
 				<!-- Inspiration -->
