@@ -76,7 +76,7 @@
 				<!-- Slide -->
 				<section>
 					<h3>.NET Interactive</h3>
-					<p>Install the .NET global tool <a href="https://www.nuget.org/packages/Microsoft.dotnet-interactive" target="_blank">nuget package</a>. [<a href="https://github.com/dotnet/interactive" target="_blank">code</a>]</p>
+					<p>Install the .NET global tool <a href="https://www.nuget.org/packages/Microsoft.dotnet-interactive" target="_blank">nuget package</a>. <small>[<a href="https://github.com/dotnet/interactive" target="_blank">code</a>]</small></p>
 					<small><blockquote>Command line tool for interactive programming with C#, F#, and PowerShell, including support for Jupyter Notebooks.</blockquote></small>
 					<p>Client / Server</p>
 				</section>
@@ -167,6 +167,12 @@
 
 				<!-- Compilation -->
 				<section>
+					<!-- Slide -->
+					<section>
+						<h2>Run through</h2>
+						<p>The anatomy of Blazor Interactive!</p>
+					</section>
+
 					<!-- Slide -->
 					<section>
 						<h2>Compilation</h2>
@@ -314,6 +320,23 @@
 					</section>
 
 					<!-- Slide -->
+					<section>
+						<h2>Upcoming Features</h2>
+						<ul>
+							<li>VB.NET & F# Support</li>
+							<li>Stats</li>
+							<li>nuget</li>
+							<li>IL visualisation</li>
+							<li>RoslynQuoter - A Roslyn tool that for a given C# program shows the syntax factory API calls to construct its syntax tree.</li>
+						</ul>
+
+						<aside class="notes">
+							<p>RoslynQuoter @KirillOsenkov - https://github.com/KirillOsenkov/RoslynQuoter</p>
+							<p>DependenSee - Dotnet project and package dependency visualizer.- https://github.com/madushans/DependenSee</p>
+						</aside>
+					</section>
+
+					<!-- Slide -->
 					<!-- <section>
 					</section> -->
 					
@@ -365,11 +388,14 @@
 					<!-- Slide -->
 					<section>
 						<h3>Inspiration</h3>
-						
-						<h4>WASI SDK</h4>
+
+						<h4>Experiments</h4>
 						<ul>
 							<li>
-								<a href="https://github.com/SteveSandersonMS/dotnet-wasi-sdk" target="_blank">Experimental WASI SDK for .NET Core</a>
+								<a href="https://github.com/alex-hedley/dotnet-interactive-experiments" target="_blank">.NET Interactive Experiments</a>
+								<ul>
+									<li><a href="https://github.com/colombod/dotnet-interactive-experiments" target="_blank">.NET Interactive Experiments (Original) @colombod</a></li>
+								</ul>
 							</li>
 						</ul>
 					</section>
@@ -396,22 +422,44 @@
 							</li>
 						</ul>
 					</section>
+
 				</section>
 
 				<!-- Slide -->
 				<section>
-					<h3>Hacking</h3>
+					<h3>Future</h3>
+					
+					<h4>@SteveSanderson</h4>
+					<ul>
+						<li>🐤 <a href="https://twitter.com/stevensanderson/status/1658845798212202496?s=20" target="_blank">WASI support in .NET 8</a></li>
+						<li>📼 <a href="https://www.youtube.com/watch?v=gKX-cdqnb8I" target="_blank">Experiments with the new WASI workload in .NET 8 Preview 4</a></li>
+					</ul>
+					<hr />
 					<ul>
 						<li>
-							<a href="https://github.com/alex-hedley/dotnet-interactive-experiments" target="_blank">.NET Interactive Experiments</a>
-							<ul>
-								<li><a href="https://github.com/colombod/dotnet-interactive-experiments" target="_blank">.NET Interactive Experiments (Original) @colombod</a></li>
-							</ul>
+							WASI SDK <a href="https://github.com/SteveSandersonMS/dotnet-wasi-sdk" target="_blank">Experimental WASI SDK for .NET Core</a>
 						</li>
+						<li>
+							Wasmtime <a href="https://wasmtime.dev" target="_blank">Site</a>
+						</li>
+						<ul>
+							<li>A fast and secure runtime for WebAssembly</li>
+						</ul>
+					</ul>
+					
+					<hr />
+
+					<h4>Hacking</h4>
+					<ul>
 						<li>
 							<a href="https://github.com/alex-hedley/dotnet-interactive-blazor-wasm" target="_blank">.NET Interactive Blazor (WASM)</a>
 						</li>
 					</ul>
+
+					<aside class="notes">
+						<p>Wasi.Sdk is an experimental package that can build .NET Core projects (including whole ASP.NET Core applications) into standalone WASI-compliant .wasm files. These can then be run in standard WASI environments or custom WASI-like hosts.</p>
+						<p>Steve Sanderson @stevensanderson - Just published a video: an update on WASI support in .NET 8, and some prototypes that push the boundaries of what you can do with .NET + WebAssembly https://www.youtube.com/watch?v=gKX-cdqnb8I</p>
+					</aside>
 				</section>
 
 				<!-- Contributors -->
@@ -424,7 +472,12 @@
 
 				<!-- Slide -->
 				<section>
-					<h2>Thanks</h2>
+					<h2>Any Questions ❓</h2>
+				</section>
+
+				<!-- Slide -->
+				<section>
+					<h2>Thanks 👏🏻</h2>
 				</section>
 
 				<!-- Slide -->
