@@ -15,7 +15,8 @@
 		
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+		<!-- <link rel="stylesheet" href="dist/theme/black.css" id="theme"> -->
+		<link rel="stylesheet" href="dist/theme/blood.css" id="theme">
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 
@@ -26,7 +27,7 @@
 			<div class="slides">
 				
 				<!-- Slide -->
-				<section data-background-gradient="radial-gradient(#5C2D91, #ccc)"">
+				<section data-background-gradient="radial-gradient(#ccc, #5C2D91)">
 					<a href="https://alex-hedley.github.io" target="_blank">
 						<img src="images/AlexHedley.jpg" alt="Alex Hedley" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;">
 					</a>
@@ -153,16 +154,37 @@
 
 				<!-- Slide -->
 				<section>
+					<h3>What is Blazor WASM?</h3>
+					<p><blockquote>Use the power of .NET and C# to build full stack web apps without writing a line of JavaScript.</blockquote></p>
+					<p><a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-7.0#blazor-webassembly"></a></p>
+					<p>Blazor WebAssembly is a single-page app (SPA) framework for building interactive client-side web apps with . NET.</p>
+					<p>Running . NET code inside web browsers is made possible by WebAssembly (abbreviated wasm).
+
+					<!-- <aside class="notes">
+						<p></p>
+					</aside> -->
+				</section>
+
+				<!-- Slide -->
+				<section>
 					<h3>What is Blazor Interactive?</h3>
 					<p>A website to write, compile and run code, in the browser.</p>
 					<img src="images/BlazorInteractive_Demo_1.png" alt="BlazorInteractive - Demo (1)" style="height: 300px; margin: 0 auto 2rem auto; background: transparent;"/>
-					<p>Think <a href="https://dotnetfiddle.net" target="_blank">.NET Fiddle</a>.</p>
 
 					<aside class="notes">
 						<p>Blazor C# Interactive (Try .NET)</p>
-						<p>VB.NET / F# coming soon.</p>
-						<p>(NuGet too)</p>
 					</aside>
+				</section>
+
+				<!-- Slide -->
+				<section>
+					<h3>Alternatives</h3>
+					<p><a href="https://dotnetfiddle.net" target="_blank">.NET Fiddle</a>.</p>
+					<p><a href="https://sharplab.io" target="_blank">SharpLab</a> Built by Andrey Shchekin (@ashmind) [<a href="https://github.com/ashmind/SharpLab" target="_blank">code</a>]</p>
+					
+					<!-- <aside class="notes">
+						<p></p>
+					</aside> -->
 				</section>
 
 				<!-- Compilation -->
@@ -272,7 +294,7 @@
 					</section>
 					
 					<!-- Slide -->
-					<section>
+					<section data-visibility="hidden">
 						<h2>Steps</h2>
 						<ul>
 							<li>Reference Filter (from <code>blazor.boot.json</code>)</li>
@@ -315,24 +337,29 @@
 
 						<aside class="notes">
 							<p>Get a list of Assemblies - from that get the References, pass them to the Compiler.</p>
-							<p>From the compilied DLL load this new Assembly then Invoke to produce the output.</p>
+							<p>From the compiled DLL load this new Assembly then Invoke to produce the output.</p>
 						</aside>
 					</section>
 
 					<!-- Slide -->
 					<section>
-						<h2>Upcoming Features</h2>
-						<ul>
-							<li>VB.NET & F# Support</li>
-							<li>Stats</li>
-							<li>nuget</li>
-							<li>IL visualisation</li>
-							<li>RoslynQuoter - A Roslyn tool that for a given C# program shows the syntax factory API calls to construct its syntax tree.</li>
-						</ul>
+						<h2>Steps</h2>
+
+						<div class="mermaid">
+							<pre>
+								%%{init: {'theme': 'dark', 'themeVariables': { 'darkMode': true }}}%%
+								graph LR
+									A[Code] --> C
+									B[Assemblies] --> |web call| C
+									C[Compile] --> D
+									D[Output]
+							</pre>
+						</div>
+
+						<p>Code from the Monaco Editor, Assemblies from a web call, compiled then output to screen.</p>
 
 						<aside class="notes">
-							<p>RoslynQuoter @KirillOsenkov - https://github.com/KirillOsenkov/RoslynQuoter</p>
-							<p>DependenSee - Dotnet project and package dependency visualizer.- https://github.com/madushans/DependenSee</p>
+							<p>Code from webpage, assemblies from web calls, compile in webpage submission, show output.</p>
 						</aside>
 					</section>
 
@@ -340,6 +367,31 @@
 					<!-- <section>
 					</section> -->
 					
+				</section>
+
+				<!-- Slide -->
+				<section>
+					<h2>Demo</h2>
+					<p>Time to show off Blazor Interactive :)</p>
+				</section>
+
+				<!-- Slide -->
+				<section>
+					<h2>Upcoming Features</h2>
+					<ul>
+						<li>VB.NET & F# Support</li>
+						<li>Stats</li>
+						<li>nuget</li>
+						<li>IL visualisation</li>
+						<li>RoslynQuoter (@KirillOsenkov)</li>
+						<small><blockquote>A Roslyn tool that for a given C# program shows the syntax factory API calls to construct its syntax tree.</blockquote></small>
+					</ul>
+
+					<aside class="notes">
+						<p><a href="https://www.nuget.org" target="_blank">https://www.nuget.org</a></p>
+						<p>RoslynQuoter @KirillOsenkov - https://github.com/KirillOsenkov/RoslynQuoter</p>
+						<p>DependenSee - Dotnet project and package dependency visualizer.- https://github.com/madushans/DependenSee</p>
+					</aside>
 				</section>
 				
 				<!-- Inspiration -->
@@ -466,7 +518,7 @@
 				<section>
 					<h3>Contributors</h3>
 					<p>This has been a team effort!</p>
-					<p>Thanks to Daniel Doyle (<img src="https://avatars.githubusercontent.com/u/3020488?s=50&v=4" /> <a href="https://github.com/TheDanielDoyle" target="_blank">@TheDanielDoyle</a>) and Rob Anderson (<img src="https://avatars3.githubusercontent.com/u/46314954?s=50&v=4" /> <a href="https://github.com/jamsidedown/" target="_blank">@jamsidedown</a>) for their continued support and mobbing on this application.</p>
+					<p>Thanks to <strong>Daniel Doyle</strong> (<img src="https://avatars.githubusercontent.com/u/3020488?s=50&v=4" /> <a href="https://github.com/TheDanielDoyle" target="_blank">@TheDanielDoyle</a>) and <strong>Rob Anderson</strong> (<img src="https://avatars3.githubusercontent.com/u/46314954?s=50&v=4" /> <a href="https://github.com/jamsidedown/" target="_blank">@jamsidedown</a>) for their continued support and mobbing on this application.</p>
 					<p>It's been great to work alongside people to create something, instead of being a lone wolf.</p>
 				</section>
 
